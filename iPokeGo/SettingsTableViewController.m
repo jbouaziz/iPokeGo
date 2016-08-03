@@ -15,15 +15,20 @@
 
 @implementation SettingsTableViewController
 
+NSString * const SettingsChangedNotification = @"Poke.SettingsChangedNotification";
+NSString * const ServerChangedNotification = @"Poke.ServerChangedNotification";
+NSString * const BackgroundSettingChangedNotification = @"Poke.BackgroundSettingChangedNotification";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self readSavedState];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self readSavedState];
 }
 
 -(void)readSavedState
@@ -32,40 +37,7 @@
     
     self.serverField.text = [prefs valueForKey:@"server_addr"];
     
-    if([prefs objectForKey:@"display_pokemons"] == nil)
-        [self.pokemonsSwitch setOn:YES]; // Not already set
-    else
-        [self.pokemonsSwitch setOn:[prefs boolForKey:@"display_pokemons"]];
-    
-    if([prefs objectForKey:@"display_pokestops"] == nil)
-        [self.pokestopsSwitch setOn:NO]; // Not already set
-    else
-        [self.pokestopsSwitch setOn:[prefs boolForKey:@"display_pokestops"]];
-    
-    if([prefs objectForKey:@"display_gyms"] == nil)
-        [self.gymsSwitch setOn:YES]; // Not already set
-    else
-        [self.gymsSwitch setOn:[prefs boolForKey:@"display_gyms"]];
-    
-    if([prefs objectForKey:@"display_common"] == nil)
-        [self.commonSwitch setOn:NO]; // Not already set
-    else
-        [self.commonSwitch setOn:[prefs boolForKey:@"display_common"]];
-
-    if([prefs objectForKey:@"display_distance"] == nil)
-        [self.distanceSwitch setOn:NO]; // Not already set
-    else
-        [self.distanceSwitch setOn:[prefs boolForKey:@"display_distance"]];
-    
-    if([prefs objectForKey:@"display_time"] == nil)
-        [self.timeSwitch setOn:NO]; // Not already set
-    else
-        [self.timeSwitch setOn:[prefs boolForKey:@"display_time"]];
-    
-    if([prefs objectForKey:@"display_timer"] == nil)
-        [self.timeTimerSwitch setOn:NO]; // Not already set
-    else
-        [self.timeTimerSwitch setOn:[prefs boolForKey:@"display_timer"]];
+    [self.backgroundSwitch setOn:[prefs boolForKey:@"run_in_background"]];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -88,46 +60,21 @@
 	}
 }
 
--(IBAction)closeAction:(UIBarButtonItem *)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    [[NSNotificationCenter defaultCenter]
-                                    postNotificationName:@"HideRefresh"
-                                    object:nil
-                                    userInfo:nil];
-}
-
 -(IBAction)saveAction:(UIBarButtonItem *)sender
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    if([self.serverField.text length] > 0)
-    {
-        [prefs setObject:self.serverField.text forKey:@"server_addr"];
+    NSString *server = [self.serverField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if (![server containsString:@"://"] && [server length] > 0) {
+        server = [NSString stringWithFormat:@"http://%@", server];
+        self.serverField.text = server;
     }
     
-    [prefs synchronize];
+    if (![[prefs objectForKey:@"server_addr"] isEqualToString:server]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:ServerChangedNotification object:nil];
+        [prefs setObject:server forKey:@"server_addr"];
+    }
     
-    [[NSNotificationCenter defaultCenter]
-                                    postNotificationName:@"HideRefresh"
-                                    object:nil
-                                    userInfo:nil];
-    
-    [[NSNotificationCenter defaultCenter]
-                                    postNotificationName:@"LoadSaveData"
-                                    object:nil
-                                    userInfo:nil];
-    
-    [[NSNotificationCenter defaultCenter]
-                                    postNotificationName:@"LaunchTimers"
-                                    object:nil
-                                    userInfo:nil];
-    
-    [[NSNotificationCenter defaultCenter]
-                                    postNotificationName:@"RefreshPokemons"
-                                    object:nil
-                                    userInfo:nil];
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:SettingsChangedNotification object:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -135,34 +82,16 @@
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
-    switch (sender.tag) {
-        case SWITCH_POKEMON:
-            [prefs setObject:[NSNumber numberWithBool:self.pokemonsSwitch.on] forKey:@"display_pokemons"];
-            break;
-        case SWITCH_POKESTOPS:
-            [prefs setObject:[NSNumber numberWithBool:self.pokestopsSwitch.on] forKey:@"display_pokestops"];
-            break;
-        case SWITCH_GYMS:
-            [prefs setObject:[NSNumber numberWithBool:self.gymsSwitch.on] forKey:@"display_gyms"];
-            break;
-        case SWITCH_COMMON:
-            [prefs setObject:[NSNumber numberWithBool:self.commonSwitch.on] forKey:@"display_common"];
-            break;
-        case SWITCH_DISTANCE:
-            [prefs setObject:[NSNumber numberWithBool:self.distanceSwitch.on] forKey:@"display_distance"];
-            break;
-        case SWITCH_TIME:
-            [prefs setObject:[NSNumber numberWithBool:self.timeSwitch.on] forKey:@"display_time"];
-            break;
-        case SWITCH_TIMETIMER:
-            [prefs setObject:[NSNumber numberWithBool:self.timeTimerSwitch.on] forKey:@"display_timer"];
-            break;
-        default:
-            // Nothing
-            break;
+    if (sender == self.backgroundSwitch) {
+        [prefs setBool:self.backgroundSwitch.on forKey:@"run_in_background"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:BackgroundSettingChangedNotification object:nil];
+        
     }
-    
-    [prefs synchronize];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
