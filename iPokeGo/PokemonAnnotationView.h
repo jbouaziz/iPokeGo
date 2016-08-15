@@ -8,9 +8,11 @@
 
 @import CoreLocation;
 #import <MapKit/MapKit.h>
+#import "global.h"
 #import "PokemonAnnotation.h"
 #import "TimeLabel.h"
 #import "TimerLabel.h"
+#import "TagLabel.h"
 #import "DistanceLabel.h"
 
 @interface PokemonAnnotationView : MKAnnotationView

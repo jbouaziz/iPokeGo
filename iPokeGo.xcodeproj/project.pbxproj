@@ -21,8 +21,11 @@
 		276FD5571D45742A006E4B96 /* NotificationsSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FD5561D45742A006E4B96 /* NotificationsSettingsTableViewController.m */; };
 		277209DC1D441CAA0008B7FA /* PokemonSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277209DB1D441CAA0008B7FA /* PokemonSelectTableViewController.m */; };
 		277209DF1D441E1F0008B7FA /* PokemonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277209DE1D441E1F0008B7FA /* PokemonTableViewCell.m */; };
+		2785D1181D5E153A004FC688 /* TagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2785D1171D5E153A004FC688 /* TagLabel.m */; };
 		2788622D1D4226D300CCF60E /* PokestopAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2788622C1D4226D300CCF60E /* PokestopAnnotation.m */; };
 		2798B9DB1D4F8CEC00B33BE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2798B9DA1D4F8CEC00B33BE5 /* LaunchScreen.storyboard */; };
+		27DE81901D61D55C00F5F87E /* LicensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE818F1D61D55C00F5F87E /* LicensesViewController.m */; };
+		27DE81921D61D59400F5F87E /* licenses.html in Resources */ = {isa = PBXBuildFile; fileRef = 27DE81911D61D59400F5F87E /* licenses.html */; };
 		27F3855D1D4130B30004A1B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F3855C1D4130B30004A1B3 /* main.m */; };
 		27F385601D4130B30004A1B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F3855F1D4130B30004A1B3 /* AppDelegate.m */; };
 		27F385631D4130B30004A1B3 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F385621D4130B30004A1B3 /* MapViewController.m */; };
@@ -50,6 +53,7 @@
 		81C9636F1D4F254A00DD6592 /* GymAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C9636E1D4F254A00DD6592 /* GymAnnotationView.m */; };
 		81C963721D4F26C700DD6592 /* PokeStopAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C963711D4F26C700DD6592 /* PokeStopAnnotationView.m */; };
 		81C963751D4F27A200DD6592 /* PokemonAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C963741D4F27A200DD6592 /* PokemonAnnotationView.m */; };
+		866862CD1D5D4667003070F3 /* FollowLocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 866862CC1D5D4667003070F3 /* FollowLocationHelper.m */; };
 		AEFA37EE1D47D04200DEE95C /* pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = AEFA37F01D47D04200DEE95C /* pokemon.json */; };
 		AEFA37F81D49252100DEE95C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEFA37F61D49252100DEE95C /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -80,6 +84,8 @@
 		0256E38B1D474C5A00CEEE3F /* DistanceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceLabel.m; sourceTree = "<group>"; };
 		0256E38D1D47BF9200CEEE3F /* NSString+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Formatting.h"; sourceTree = "<group>"; };
 		0256E38E1D47BF9200CEEE3F /* NSString+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Formatting.m"; sourceTree = "<group>"; };
+		095DAA6F1D5FB6E000377BB0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		095DAA711D5FB77700377BB0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		2720658A1D4223FD00D3B6E6 /* GymAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GymAnnotation.h; sourceTree = "<group>"; };
 		2720658B1D4223FD00D3B6E6 /* GymAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GymAnnotation.m; sourceTree = "<group>"; };
 		273604551D44094700194BAF /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
@@ -98,9 +104,14 @@
 		277209DB1D441CAA0008B7FA /* PokemonSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonSelectTableViewController.m; sourceTree = "<group>"; };
 		277209DD1D441E1F0008B7FA /* PokemonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonTableViewCell.h; sourceTree = "<group>"; };
 		277209DE1D441E1F0008B7FA /* PokemonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewCell.m; sourceTree = "<group>"; };
+		2785D1161D5E153A004FC688 /* TagLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagLabel.h; sourceTree = "<group>"; };
+		2785D1171D5E153A004FC688 /* TagLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagLabel.m; sourceTree = "<group>"; };
 		2788622B1D4226D300CCF60E /* PokestopAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokestopAnnotation.h; sourceTree = "<group>"; };
 		2788622C1D4226D300CCF60E /* PokestopAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokestopAnnotation.m; sourceTree = "<group>"; };
 		2798B9DA1D4F8CEC00B33BE5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27DE818E1D61D55C00F5F87E /* LicensesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicensesViewController.h; sourceTree = "<group>"; };
+		27DE818F1D61D55C00F5F87E /* LicensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicensesViewController.m; sourceTree = "<group>"; };
+		27DE81911D61D59400F5F87E /* licenses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = licenses.html; sourceTree = "<group>"; };
 		27F385581D4130B30004A1B3 /* iPokeGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPokeGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F3855C1D4130B30004A1B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27F3855E1D4130B30004A1B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,9 +139,14 @@
 		27F4244F1D469A68007ADEE4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		27F424551D46A246007ADEE4 /* SVPulsingAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPulsingAnnotationView.h; sourceTree = "<group>"; };
 		27F424561D46A246007ADEE4 /* SVPulsingAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPulsingAnnotationView.m; sourceTree = "<group>"; };
+		48E593571D60BF3600FEA380 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		48E593581D60BF3600FEA380 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58CA35381D4B792C003B7F85 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		58CA35391D4B792C003B7F85 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/pokemon.json; sourceTree = "<group>"; };
 		58CA353A1D4B792C003B7F85 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6A7221381D5DCB5900E522B6 /* zh-Hant-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-HK"; path = "zh-Hant-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		6A7221391D5DCB5900E522B6 /* zh-Hant-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-HK"; path = "zh-Hant-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6A72213A1D5DCB5900E522B6 /* zh-Hant-HK */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hant-HK"; path = "zh-Hant-HK.lproj/pokemon.json"; sourceTree = "<group>"; };
 		81055B8E1D4D3DC20071FDD2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		81055BAA1D4D413D0071FDD2 /* iPokeServerSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPokeServerSync.h; sourceTree = "<group>"; };
 		81055BAB1D4D413D0071FDD2 /* iPokeServerSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPokeServerSync.m; sourceTree = "<group>"; };
@@ -159,6 +175,10 @@
 		81C963711D4F26C700DD6592 /* PokeStopAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokeStopAnnotationView.m; sourceTree = "<group>"; };
 		81C963731D4F27A200DD6592 /* PokemonAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonAnnotationView.h; sourceTree = "<group>"; };
 		81C963741D4F27A200DD6592 /* PokemonAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonAnnotationView.m; sourceTree = "<group>"; };
+		866862CC1D5D4667003070F3 /* FollowLocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowLocationHelper.m; sourceTree = "<group>"; };
+		866862CE1D5D468B003070F3 /* FollowLocationHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowLocationHelper.h; sourceTree = "<group>"; };
+		8673808B1D60E1340062A80B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		8673808C1D60E1340062A80B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AE1E273F1D4A8F4900FA1BA0 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		AE1E27401D4A8F4900FA1BA0 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AEFA37F11D47D04800DEE95C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/pokemon.json; sourceTree = "<group>"; };
@@ -215,6 +235,8 @@
 				0256E3821D473D6A00CEEE3F /* TimeLabel.m */,
 				0256E3841D473D7800CEEE3F /* TimerLabel.h */,
 				0256E3851D473D7800CEEE3F /* TimerLabel.m */,
+				2785D1161D5E153A004FC688 /* TagLabel.h */,
+				2785D1171D5E153A004FC688 /* TagLabel.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -243,6 +265,8 @@
 				2736045B1D440B1700194BAF /* CWStatusBarNotification */,
 				0256E38D1D47BF9200CEEE3F /* NSString+Formatting.h */,
 				0256E38E1D47BF9200CEEE3F /* NSString+Formatting.m */,
+				866862CC1D5D4667003070F3 /* FollowLocationHelper.m */,
+				866862CE1D5D468B003070F3 /* FollowLocationHelper.h */,
 			);
 			name = "Custom classes";
 			sourceTree = "<group>";
@@ -326,8 +350,19 @@
 				276B898D1D50FB0E008164FE /* Pokemons */,
 				276B898E1D50FB15008164FE /* Pokestops */,
 				276B898F1D50FB1B008164FE /* Gyms */,
+				27DE818D1D61D54100F5F87E /* Licenses */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		27DE818D1D61D54100F5F87E /* Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				27DE818E1D61D55C00F5F87E /* LicensesViewController.h */,
+				27DE818F1D61D55C00F5F87E /* LicensesViewController.m */,
+				27DE81911D61D59400F5F87E /* licenses.html */,
+			);
+			name = Licenses;
 			sourceTree = "<group>";
 		};
 		27F3854F1D4130B30004A1B3 = {
@@ -579,6 +614,9 @@
 				ja,
 				it,
 				ru,
+				"zh-Hant-HK",
+				nl,
+				es,
 			);
 			mainGroup = 27F3854F1D4130B30004A1B3;
 			productRefGroup = 27F385591D4130B30004A1B3 /* Products */;
@@ -603,6 +641,7 @@
 				AEFA37F81D49252100DEE95C /* Localizable.strings in Resources */,
 				2798B9DB1D4F8CEC00B33BE5 /* LaunchScreen.storyboard in Resources */,
 				27F385681D4130B30004A1B3 /* Assets.xcassets in Resources */,
+				27DE81921D61D59400F5F87E /* licenses.html in Resources */,
 				27F385661D4130B30004A1B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,8 +678,10 @@
 				81055B8F1D4D3DC20071FDD2 /* Model.xcdatamodeld in Sources */,
 				2720658C1D4223FD00D3B6E6 /* GymAnnotation.m in Sources */,
 				81C9636F1D4F254A00DD6592 /* GymAnnotationView.m in Sources */,
+				866862CD1D5D4667003070F3 /* FollowLocationHelper.m in Sources */,
 				811142FF1D4D596700901851 /* Pokemon+CoreDataProperties.m in Sources */,
 				0256E38C1D474C5A00CEEE3F /* DistanceLabel.m in Sources */,
+				2785D1181D5E153A004FC688 /* TagLabel.m in Sources */,
 				27F385631D4130B30004A1B3 /* MapViewController.m in Sources */,
 				27F385601D4130B30004A1B3 /* AppDelegate.m in Sources */,
 				81771E081D4DA47B004DC881 /* PokemonNotifier.m in Sources */,
@@ -655,6 +696,7 @@
 				81055BAC1D4D413D0071FDD2 /* iPokeServerSync.m in Sources */,
 				277209DC1D441CAA0008B7FA /* PokemonSelectTableViewController.m in Sources */,
 				2788622D1D4226D300CCF60E /* PokestopAnnotation.m in Sources */,
+				27DE81901D61D55C00F5F87E /* LicensesViewController.m in Sources */,
 				81055BAF1D4D46790071FDD2 /* CoreDataPersistance.m in Sources */,
 				0256E3861D473D7800CEEE3F /* TimerLabel.m in Sources */,
 				27F4244A1D468394007ADEE4 /* ScanAnnotation.m in Sources */,
@@ -704,6 +746,10 @@
 				AEFA37FF1D49292D00DEE95C /* de */,
 				AE1E273F1D4A8F4900FA1BA0 /* it */,
 				58CA35381D4B792C003B7F85 /* ru */,
+				6A7221381D5DCB5900E522B6 /* zh-Hant-HK */,
+				095DAA711D5FB77700377BB0 /* fr */,
+				48E593571D60BF3600FEA380 /* nl */,
+				8673808B1D60E1340062A80B /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -717,6 +763,7 @@
 				AEFA37F41D47D04E00DEE95C /* fr */,
 				AEFA37F51D491E4900DEE95C /* ja */,
 				58CA35391D4B792C003B7F85 /* ru */,
+				6A72213A1D5DCB5900E522B6 /* zh-Hant-HK */,
 			);
 			name = pokemon.json;
 			sourceTree = "<group>";
@@ -728,6 +775,10 @@
 				AEFA380B1D49293400DEE95C /* de */,
 				AE1E27401D4A8F4900FA1BA0 /* it */,
 				58CA353A1D4B792C003B7F85 /* ru */,
+				6A7221391D5DCB5900E522B6 /* zh-Hant-HK */,
+				095DAA6F1D5FB6E000377BB0 /* fr */,
+				48E593581D60BF3600FEA380 /* nl */,
+				8673808C1D60E1340062A80B /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

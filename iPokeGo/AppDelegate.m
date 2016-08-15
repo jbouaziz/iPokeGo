@@ -52,7 +52,13 @@ static NSTimeInterval AppDelegatServerRefreshFrequencyBackground = 20.0;
                                @"display_timer" : @"NO",
                                @"vibration": @"YES",
                                @"fav_notification": @"YES",
-                               @"norm_notification": @"NO" };
+                               @"norm_notification": @"NO",
+                               @"map_type_standard": @"YES",
+                               @"driving_mode": @"MKLaunchOptionsDirectionsModeDriving",
+                               @"only_notify_in_range": @"FALSE",
+                               @"common_notification_range": @"100",
+                               @"favorite_notification_range": @"2500",
+                               @"server_type": SERVER_API_DATA_POKEMONGOMAP};
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     
     self.server = [[iPokeServerSync alloc] init];
@@ -64,6 +70,7 @@ static NSTimeInterval AppDelegatServerRefreshFrequencyBackground = 20.0;
     self.backgroundManager.pausesLocationUpdatesAutomatically = NO;
     self.backgroundManager.activityType = CLActivityTypeFitness;
     self.backgroundManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; //lets try to keep this light
+    self.backgroundManager.distanceFilter = 50; //50 meters to update app location
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
         BOOL backgroundUpdate = YES;
         NSMethodSignature* signature = [[CLLocationManager class] instanceMethodSignatureForSelector:@selector(setAllowsBackgroundLocationUpdates:)];

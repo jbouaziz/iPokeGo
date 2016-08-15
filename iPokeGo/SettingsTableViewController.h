@@ -9,18 +9,34 @@
 #import <UIKit/UIKit.h>
 #import "global.h"
 
+#define CELL_INDEX_SERVERTYPE   0
+#define CELL_INDEX_DRIVINGMODE  5
+
 extern NSString * const SettingsChangedNotification;
 extern NSString * const ServerChangedNotification;
 extern NSString * const BackgroundSettingChangedNotification;
 
-@interface SettingsTableViewController : UITableViewController
+@interface SettingsTableViewController : UITableViewController <UITextFieldDelegate>
 
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *fermerButton;
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
+@property(weak, nonatomic) IBOutlet UIImageView *serverTypeImageView;
+@property(weak, nonatomic) IBOutlet UILabel *serverTypeLabel;
+
 @property(weak, nonatomic) IBOutlet UIImageView *serverImageView;
 @property(weak, nonatomic) IBOutlet UILabel *serverLabel;
 @property(weak, nonatomic) IBOutlet UITextField *serverField;
+
+@property(weak, nonatomic) IBOutlet UIImageView *usernameImageView;
+@property(weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property(weak, nonatomic) IBOutlet UITextField *usernameField;
+
+@property(weak, nonatomic) IBOutlet UIImageView *passwordImageView;
+@property(weak, nonatomic) IBOutlet UILabel *passwordLabel;
+@property(weak, nonatomic) IBOutlet UITextField *passwordField;
+
+@property(weak, nonatomic) IBOutlet UILabel *drivingModeLabel;
 
 @property(weak, nonatomic) IBOutlet UIImageView *pokemonsImageView;
 @property(weak, nonatomic) IBOutlet UILabel *pokemonsLabel;
@@ -34,6 +50,11 @@ extern NSString * const BackgroundSettingChangedNotification;
 
 @property(weak, nonatomic) IBOutlet UIImageView *gymsImageView;
 @property(weak, nonatomic) IBOutlet UILabel *gymsLabel;
+
+@property(weak, nonatomic) IBOutlet UIImageView *licenseImageView;
+@property(weak, nonatomic) IBOutlet UILabel *licenseLabel;
+
+@property(weak, nonatomic) IBOutlet UILabel *footerLabel;
 
 -(IBAction)saveAction:(UIBarButtonItem *)sender;
 -(IBAction)swicthsAction:(UISwitch *)sender;

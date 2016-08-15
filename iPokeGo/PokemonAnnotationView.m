@@ -30,6 +30,24 @@
         self.frame = CGRectMake(0, 0, 45, 45);
         self.location = location;
         
+        UIColor *bgColor = COLOR_COMMON;
+        if([annotation.rarity isEqualToString:@"Uncommon"])
+            bgColor = COLOR_UNCOMMON;
+        else if([annotation.rarity isEqualToString:@"Rare"])
+            bgColor = COLOR_RARE;
+        else if([annotation.rarity isEqualToString:@"Very Rare"])
+            bgColor = COLOR_VERYRARE;
+        else if([annotation.rarity isEqualToString:@"Ultra Rare"])
+            bgColor = COLOR_ULTRARARE;
+
+        if([annotation.rarity length] > 0)
+        {
+            TagLabel *tagLabelView = [[TagLabel alloc] init];
+            [tagLabelView setLabelText:annotation.rarity.uppercaseString];
+            [tagLabelView setBackgroundColor:bgColor];
+            self.leftCalloutAccessoryView = tagLabelView;
+        }
+        
         [self updateForAnnotation:annotation withLocation:location];
     }
     return self;

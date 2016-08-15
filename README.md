@@ -1,21 +1,23 @@
 
-# Pokemap client for iOS [![Build Status](https://travis-ci.org/istornz/iPokeGo.svg?branch=master)](https://travis-ci.org/istornz/iPokeGo)
-This is a client for the Pokemap server (https://github.com/AHAAAAAAA/PokemonGo-Map)
+# Pokemap client for iOS [![Build Status](https://travis-ci.org/istornz/iPokeGo.svg?branch=master)](https://travis-ci.org/istornz/iPokeGo) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/istornz)
+This is a client for the Pokemap server (https://github.com/PokemonGoMap/PokemonGo-Map)
 
-<img src="http://dimitridessus.fr/img/iPokeGo/screenshots/iPokeGo4.jpg" width="270" height="480"/>
+<img src="http://dimitridessus.fr/img/iPokeGo/screenshots/iPokeGo7.jpg" width="270" height="480"/>
 <img src="http://dimitridessus.fr/img/iPokeGo/screenshots/iPokeGo6.jpg" width="270" height="480"/>
 <img src="http://dimitridessus.fr/img/iPokeGo/screenshots/iPokeGo3.jpg" width="270" height="480"/>
 
 ## Features
 - Show/Hide Pokemons,Pokestops and Gyms.
 - Change radar position.
-- Drive destination to capture a specific pokemon.
+- Drive destination to capture a specific pokemon (bike, walk and transit).
 - Notification on status bar when a new pokemon was added on the map.
 - Real notification working on iDevice and Apple Watch.
 - Possibility to make a favorite list of pokemon (when a favorite pokemon was added on map, a notification more visible is fired).
 - Add any server (heroku, your server, jelastic and more...).
 - See distance and remaining time on each pokemons.
 - Possibility to show/hide common pokemon in a list.
+- Supports [**PokemonGo-Map**](https://github.com/PokemonGoMap/PokemonGo-Map) and [**Pogom**](https://github.com/favll/pogom) server.
+- Possibility to follow user location.
 
 ## Now with real push notification !
 <img src="http://dimitridessus.fr/img/iPokeGo/screenshots/iPokeGo5.jpg" width="270" height="480"/>
@@ -47,10 +49,10 @@ To find your address look at this : http://bit.ly/2aweVR1 (if you have a local s
 
 ## Compatibility
 - iDevice : This app works with all iPhone/iPod Touch and iPad, you only need iOS 8 or more.
-- Server : Please use latest stable version (https://github.com/AHAAAAAAA/PokemonGo-Map/releases)
+- Server : Please use latest stable version (https://github.com/PokemonGoMap/PokemonGo-Map/releases)
 
 ## TODO
-- [ ] Add possibility to follow user location (same as website)
+- [x] Add possibility to follow user location (same as website)
 - [ ] Add a server status page
 - [ ] Regroup pokestops annotations to reduce CPU usage (clustering)
 - [x] Update pokestop and gym annotations
@@ -68,7 +70,7 @@ There is an [Android port](https://github.com/omkarmoghe/Pokemap) in the works. 
 iPokeGo is released under the MIT license. See LICENSE for details.
 Thx to @ryanmclachlan for the beautiful UI Design !
 
-#[Official Website] (https://jz6.github.io/PoGoMap/#)
+#[Official Website] (https://pokemongomap.github.io/PoGoMapWebsite/)
 Live visualization of all pokemon (with option to show gyms and pokestops) in your area. This is a proof of concept that we can load all nearby pokemon given a location. Currently runs on a Flask server displaying a Google Map with markers on it.
 
 Using this software is against the ToS and can get you banned. Use at your own risk.
@@ -76,4 +78,6 @@ Using this software is against the ToS and can get you banned. Use at your own r
 Building off [Mila432](https://github.com/Mila432/Pokemon_Go_API)'s PokemonGo API, [tejado's additions](https://github.com/tejado/pokemongo-api-demo), [leegao's additions](https://github.com/leegao/pokemongo-api-demo/tree/simulation) and [Flask-GoogleMaps](https://github.com/rochacbruno/Flask-GoogleMaps).
 
 ---
-For instructions, please refer to [the wiki](https://github.com/AHAAAAAAA/PokemonGo-Map/wiki)
+<a href="https://www.paypal.me/istornz"><img src="http://dimitridessus.fr/img/iPokeGo/buy-me-a-coffee.png" width="170"/></a>
+
+For instructions, please refer to [the wiki](https://pgm.readthedocs.io/en/develop/)
